@@ -1,0 +1,209 @@
+# ============================================================
+#  .gitignore — University_code 通用忽略规则
+#  用途：忽略 IDE 缓存、构建产物、运行时垃圾文件；
+#        已覆盖 C/C++(Visual Studio/CMake)、C#/.NET、Python、
+#        Node.js、Java/Kotlin、Go、Rust 及常见系统/编辑器文件。
+#  如需强制提交被忽略的文件：git add -f <文件>
+# ============================================================
+
+# ------------------------------------------------------------
+# Visual Studio（.vs 目录 / 用户级配置，.sln/.vcxproj 仍正常跟踪）
+# ------------------------------------------------------------
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio / MSVC 编译中间与输出
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Oo]ut/
+[Bb]in/
+[Oo]bj/
+ipch/
+*.tlog
+*.ipch
+*.iobj
+*.ipdb
+*.idb
+*.ilk
+*.pch
+*.pdb
+*.obj
+*.res
+*.exp
+*.aps
+*.ncb
+*.opendb
+*.sdf
+*.opensdf
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
+*.lastbuildstate
+msbuild.log
+msbuild.err
+*.log
+
+# 可执行/链接库等构建产物
+*.exe
+*.dll
+*.lib
+*.so
+*.so.*
+*.dylib
+*.a
+
+# NuGet
+[Pp]ackages/
+*.nupkg
+
+# ------------------------------------------------------------
+# CMake
+# ------------------------------------------------------------
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile.cmake
+compile_commands.json
+*.cmake.tmp
+
+# ------------------------------------------------------------
+# C / C++（gcc/clang 直接编译的产物）
+# ------------------------------------------------------------
+*.o
+*.out
+a.out
+a.exe
+*.gcda
+*.gcno
+
+# ------------------------------------------------------------
+# C# / .NET（bin/obj 已在上方忽略）
+# ------------------------------------------------------------
+*.csproj.user
+*_i.c
+*_p.c
+*.ncrunch*
+*.snk
+TestResults/
+coverage/
+*.coverage
+
+# ------------------------------------------------------------
+# Python
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+.eggs/
+.venv/
+venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+dist/
+build/
+.ipynb_checkpoints/
+*.asv
+
+# ------------------------------------------------------------
+# Node.js
+# ------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.eslintcache
+*.tsbuildinfo
+.next/
+.nuxt/
+out/
+dist/
+coverage/
+
+# ------------------------------------------------------------
+# Java / Kotlin / JVM
+# ------------------------------------------------------------
+.gradle/
+build/
+out/
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# ------------------------------------------------------------
+# Go
+# ------------------------------------------------------------
+*.test
+*.out
+bin/
+
+# ------------------------------------------------------------
+# Rust
+# ------------------------------------------------------------
+target/
+**/*.rs.bk
+
+# ------------------------------------------------------------
+# IDE / 编辑器
+# ------------------------------------------------------------
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.code-workspace
+*.swp
+*.swo
+*~
+*.orig
+*.rej
+
+# ------------------------------------------------------------
+# 操作系统
+# ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+
+# ------------------------------------------------------------
+# 其他临时 / 运行时文件
+# ------------------------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.old
+*.pid
+*.seed
+*.pid.lock
+core
+core.*
+crash.log
+
+# 环境变量/密钥（保留 .env.example 作为模板）
+.env
+.env.*
+!.env.example
