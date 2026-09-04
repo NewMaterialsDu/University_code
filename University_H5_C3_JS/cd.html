@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>罗定中学城东学校</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Microsoft YaHei", "苹方", sans-serif;
+            background: linear-gradient(180deg, #fdf6f0 0%, #fce4dc 30%, #fdf6f0 60%, #fce4dc 100%);
+            color: #4a3728; min-height: 100vh; line-height: 1.8;
+            background-image:
+                radial-gradient(circle, #f0c8b8 1px, transparent 1px),
+                radial-gradient(circle, #e8b8a8 1px, transparent 1px),
+                radial-gradient(circle, #f0c8b8 1.5px, transparent 1.5px);
+            background-size: 120px 120px, 160px 160px, 200px 200px;
+            background-position: 20px 40px, 100px 80px, 60px 160px;
+        }
+        .petal {
+            position: fixed; top: -60px; font-size: 1.8rem;
+            animation: fall linear infinite; pointer-events: none; z-index: 999; opacity: 0.5;
+        }
+        @keyframes fall {
+            0% { top: -60px; transform: rotate(0deg) translateX(0px); }
+            100% { top: 110vh; transform: rotate(360deg) translateX(80px); }
+        }
+        .p1 { left: 3%; animation-duration: 9s; animation-delay: 0s; }
+        .p2 { left: 18%; animation-duration: 11s; animation-delay: 2s; }
+        .p3 { left: 33%; animation-duration: 8s; animation-delay: 4s; }
+        .p4 { left: 48%; animation-duration: 12s; animation-delay: 1s; }
+        .p5 { left: 63%; animation-duration: 10s; animation-delay: 3s; }
+        .p6 { left: 78%; animation-duration: 9s; animation-delay: 5s; }
+        .p7 { left: 90%; animation-duration: 11s; animation-delay: 2.5s; }
+
+        .hero {
+            background: linear-gradient(135deg, #d4a574, #c0845a, #a06840);
+            color: #fff; text-align: center; padding: 60px 20px 50px;
+            position: relative; overflow: hidden;
+        }
+        .hero::after {
+            content: ""; position: absolute; bottom: -30px; left: -10%;
+            width: 120%; height: 60px; background: #fdf6f0; border-radius: 50% 50% 0 0;
+        }
+        .hero h1 { font-size: 2.8rem; letter-spacing: 8px; margin-bottom: 10px; text-shadow: 3px 3px 0 rgba(0,0,0,0.2); }
+        .hero .subtitle { font-size: 1.1rem; letter-spacing: 4px; opacity: 0.9; }
+        .hero .badge {
+            display: inline-block; margin-top: 15px; padding: 6px 20px;
+            border: 2px solid rgba(255,255,255,0.6); border-radius: 20px;
+            font-size: 0.9rem; letter-spacing: 2px; opacity: 0.85;
+        }
+
+        .nav {
+            background: #fff; text-align: center; position: sticky; top: 0; z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        .nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; }
+        .nav li a {
+            display: block; padding: 14px 22px; color: #6b4226; text-decoration: none;
+            font-size: 0.95rem; letter-spacing: 2px; transition: all 0.3s; border-bottom: 3px solid transparent;
+        }
+        .nav li a:hover { border-bottom-color: #c0845a; color: #c0845a; }
+
+        .container { width: 90%; max-width: 1000px; margin: 30px auto; }
+
+        .intro-section {
+            background: #fff; border-radius: 16px; padding: 35px 30px; margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #f0ddd0;
+        }
+        .intro-section h2 {
+            color: #6b4226; font-size: 1.6rem; margin-bottom: 15px; letter-spacing: 3px;
+            padding-left: 14px; border-left: 5px solid #c0845a;
+        }
+        .intro-section p { text-indent: 2em; font-size: 1rem; color: #5a4a3a; margin-bottom: 10px; }
+        .highlight-box { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px; }
+        .stat-card {
+            flex: 1; min-width: 130px; background: #fdf6f0; border-radius: 12px;
+            padding: 18px 15px; text-align: center; border: 2px dashed #e8c9a0;
+        }
+        .stat-card .number { font-size: 2rem; font-weight: bold; color: #c0845a; }
+        .stat-card .label { font-size: 0.85rem; color: #8b7355; margin-top: 4px; letter-spacing: 1px; }
+
+        .section-title { font-size: 1.5rem; color: #6b4226; margin-bottom: 18px; letter-spacing: 3px; text-align: center; }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px; margin-bottom: 30px;
+        }
+        .card {
+            background: #fff; border-radius: 16px; padding: 25px 20px; text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05); border: 1px solid #f0ddd0;
+            cursor: pointer; transition: all 0.4s; position: relative;
+        }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-color: #c0845a; }
+        .card.selected { border: 3px solid #c0845a; box-shadow: 0 8px 25px rgba(192,132,90,0.2); background: #fffaf5; }
+        .card .icon { font-size: 3rem; margin-bottom: 10px; display: block; }
+        .card h3 { font-size: 1.2rem; color: #6b4226; letter-spacing: 2px; margin-bottom: 6px; }
+        .card .short-desc { font-size: 0.85rem; color: #8b7355; }
+        .card .arrow { display: inline-block; margin-top: 8px; color: #c0845a; font-size: 0.8rem; }
+
+        .detail-panel {
+            background: #fff; border-radius: 16px; padding: 30px; margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #f0ddd0;
+            min-height: 200px;
+        }
+        .detail-panel h2 {
+            color: #6b4226; font-size: 1.6rem; letter-spacing: 3px; margin-bottom: 15px;
+            background: #fdf6f0; display: inline-block; padding: 6px 20px; border-radius: 8px;
+        }
+        .detail-content { font-size: 1rem; color: #5a4a3a; line-height: 2; margin-bottom: 15px; }
+        .feature-list { display: flex; flex-wrap: wrap; gap: 10px; }
+        .feature-tag {
+            background: #fdf6f0; padding: 6px 16px; border-radius: 20px;
+            font-size: 0.85rem; color: #8b7355; border: 1px solid #e8c9a0;
+        }
+
+        .map-section {
+            background: #fff; border-radius: 16px; padding: 30px; margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #f0ddd0;
+        }
+        .map-section h2 {
+            color: #6b4226; font-size: 1.4rem; letter-spacing: 3px; margin-bottom: 15px;
+            padding-left: 14px; border-left: 5px solid #c0845a;
+        }
+        .map-box {
+            width: 100%; height: 300px; border-radius: 12px; border: 3px solid #e8c9a0;
+            background: #fef9f0; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; text-align: center;
+        }
+        .map-box .address { font-size: 1.2rem; color: #6b4226; margin-bottom: 15px; letter-spacing: 2px; }
+        .map-box .open-map {
+            display: inline-block; padding: 12px 30px; background: #c0845a; color: #fff;
+            border-radius: 30px; text-decoration: none; font-size: 1rem; letter-spacing: 2px;
+            transition: background 0.3s;
+        }
+        .map-box .open-map:hover { background: #a06840; }
+
+        .footer {
+            background: #4a3728; color: #d4c5b5; text-align: center;
+            padding: 20px; font-size: 0.85rem; letter-spacing: 2px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; letter-spacing: 3px; }
+            .hero .subtitle { font-size: 0.9rem; }
+            .nav li a { padding: 10px 12px; font-size: 0.8rem; }
+            .card-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .card .icon { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <span class="petal p1">🌸</span>
+    <span class="petal p2">🍂</span>
+    <span class="petal p3">🌸</span>
+    <span class="petal p4">🍂</span>
+    <span class="petal p5">🌸</span>
+    <span class="petal p6">🍂</span>
+    <span class="petal p7">🌸</span>
+
+    <div class="hero">
+        <h1>罗定中学城东学校</h1>
+        <p class="subtitle">立德树人 · 追求卓越</p>
+        <span class="badge">广东省一级学校</span>
+    </div>
+
+    <div class="nav">
+        <ul>
+            <li><a href="#intro">学校简介</a></li>
+            <li><a href="#places">校园导览</a></li>
+            <li><a href="#detail">地点详情</a></li>
+            <li><a href="#map">地理位置</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+
+        <div class="intro-section" id="intro">
+            <h2>学校简介</h2>
+            <p>罗定中学城东学校位于广东省罗定市龙华东路173号，是一所全日制公办完全中学。学校占地面积约300亩，是罗定市校园面积最大的中学。自2004年建校以来，始终坚持“以德树人、全面发展”的办学理念，形成了“严谨、勤奋、求实、创新”的优良校风。</p>
+            <p>学校现有97个教学班，在校学生超过6000人，教职工近400人。作为广东省一级学校，学校先后获评全国青少年校园足球特色学校、广东省安全文明校园等荣誉称号。</p>
+            <div class="highlight-box">
+                <div class="stat-card"><div class="number">300</div><div class="label">亩校园面积</div></div>
+                <div class="stat-card"><div class="number">97</div><div class="label">个教学班</div></div>
+                <div class="stat-card"><div class="number">6000+</div><div class="label">在校学生</div></div>
+                <div class="stat-card"><div class="number">2004</div><div class="label">年建校</div></div>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="places">🏫 校园导览 · 点击卡片查看详情</h2>
+        <div class="card-grid">
+            <div class="card selected" id="card1" onclick="showDetail(1, this)">
+                <span class="icon">🏛️</span><h3>学校大门</h3>
+                <p class="short-desc">龙华东路173号，气势恢宏</p>
+                <span class="arrow">点击查看详情 ▼</span>
+            </div>
+            <div class="card" id="card2" onclick="showDetail(2, this)">
+                <span class="icon">📚</span><h3>教学楼群</h3>
+                <p class="short-desc">4栋教学楼，智慧课堂</p>
+                <span class="arrow">点击查看详情 ▼</span>
+            </div>
+            <div class="card" id="card3" onclick="showDetail(3, this)">
+                <span class="icon">🔬</span><h3>实验楼</h3>
+                <p class="short-desc">探究室与实验室齐全</p>
+                <span class="arrow">点击查看详情 ▼</span>
+            </div>
+            <div class="card" id="card4" onclick="showDetail(4, this)">
+                <span class="icon">🏠</span><h3>宿舍 & 食堂</h3>
+                <p class="short-desc">5栋宿舍，空调独立卫浴</p>
+                <span class="arrow">点击查看详情 ▼</span>
+            </div>
+            <div class="card" id="card5" onclick="showDetail(5, this)">
+                <span class="icon">⚽</span><h3>运动场</h3>
+                <p class="short-desc">400米跑道+13个篮球场</p>
+                <span class="arrow">点击查看详情 ▼</span>
+            </div>
+            <div class="card" id="card6" onclick="showDetail(6, this)">
+                <span class="icon">📖</span><h3>图书馆</h3>
+                <p class="short-desc">藏书丰富，电子阅览室</p>
+                <span class="arrow">点击查看详情 ▼</span>
+            </div>
+        </div>
+
+        <div class="detail-panel" id="detail">
+            <h2 id="detailTitle">💡 欢迎</h2>
+            <div class="detail-content" id="detailContent">
+                请点击上方任意一张校园地点卡片，这里将显示该地点的详细介绍与特色标签。
+            </div>
+            <div class="feature-list" id="detailTags">
+                <span class="feature-tag">点击卡片开始探索</span>
+            </div>
+        </div>
+
+        <div class="map-section" id="map">
+            <h2>地理位置</h2>
+            <div class="map-box">
+                <p class="address">📍 广东省云浮市罗定市龙华东路173号</p>
+                <!-- 修正后的百度地图链接，直接搜索学校名称 -->
+                <a class="open-map" href="https://map.baidu.com/search/%E7%BD%97%E5%AE%9A%E4%B8%AD%E5%AD%A6%E5%9F%8E%E4%B8%9C%E5%AD%A6%E6%A0%A1" target="_blank">🔍 在百度地图中查看</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        罗定中学城东学校 · 前端期末答辩作品 · 2026
+    </div>
+
+    <script>
+        var detailData = {
+            1: {
+                title: "🏛️ 学校大门",
+                content: "学校主校门位于龙华东路173号，是学校的标志性建筑。校门设计庄重大气，每天清晨数千名学子从这里步入校园。门前广场宽阔整洁，两侧绿树成荫，是学校对外展示形象的重要窗口。",
+                tags: ["龙华东路173号", "标志性建筑", "主入口", "校前广场"]
+            },
+            2: {
+                title: "📚 教学楼群",
+                content: "学校共有4栋教学楼，每间教室均配备多媒体教学平台和智慧课堂系统。教学楼采用学本课堂教学模式，注重学生主动参与和探究学习。楼内还设有学科教研室、辅导室等配套空间。",
+                tags: ["4栋教学楼", "智慧课堂", "多媒体平台", "学本课堂"]
+            },
+            3: {
+                title: "🔬 实验楼",
+                content: "实验楼设有物理、化学、生物等学科探究室和各类实验室，教学仪器配备率达100%。此外还配备电子阅览室和信息技术教室，满足不同学科的实践需求。",
+                tags: ["学科探究室", "实验室", "仪器100%配备", "电子阅览室"]
+            },
+            4: {
+                title: "🏠 宿舍 & 食堂",
+                content: "学校建有5栋学生宿舍楼，每间宿舍配备空调、独立卫生间和浴室，24小时热水供应，还提供免费直饮水。食堂菜品种类丰富，涵盖粤菜、家常菜等多种口味。",
+                tags: ["5栋宿舍", "空调+独立卫浴", "24小时热水", "多样化菜品"]
+            },
+            5: {
+                title: "⚽ 运动场",
+                content: "运动设施齐全，拥有400米和200米跑道田径场各一个，标准篮球场13个，羽毛球场若干。作为全国青少年校园足球特色学校，足球氛围浓厚，每年举办校园足球联赛。",
+                tags: ["400米跑道", "13个篮球场", "足球特色学校", "羽毛球场"]
+            },
+            6: {
+                title: "📖 图书馆",
+                content: "图书馆藏书丰富，涵盖文学、科学、历史等多个门类。馆内设有电子阅览区，配备电脑和网络资源。安静舒适的阅读环境使其成为同学们课余最喜爱的去处之一。",
+                tags: ["藏书丰富", "电子阅览区", "安静舒适", "多门类"]
+            }
+        };
+
+        function showDetail(num, cardElement) {
+            document.getElementById("detailTitle").textContent = detailData[num].title;
+            document.getElementById("detailContent").textContent = detailData[num].content;
+
+            var tagsHtml = "";
+            var tags = detailData[num].tags;
+            for (var i = 0; i < tags.length; i++) {
+                tagsHtml += '<span class="feature-tag">' + tags[i] + '</span>';
+            }
+            document.getElementById("detailTags").innerHTML = tagsHtml;
+
+            var allCards = document.querySelectorAll(".card");
+            for (var j = 0; j < allCards.length; j++) {
+                allCards[j].classList.remove("selected");
+            }
+            cardElement.classList.add("selected");
+
+            document.getElementById("detail").scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+/* 登录/注册页覆盖样式 */
+body {
+  font-family: "Microsoft Yahei", Arial, sans-serif;
+  margin: 0;
+}
+/* 将 .quan 背景设为站点红色并撑满视口 */
+.quan {
+  background-color: #C41E3A !important;
+  min-height: 100vh;
+}
+.login-wrap {
+  padding: 60px 20px;
+}
+.login-card {
+  width: 360px;
+  border-radius: 6px;
+  overflow: visible;
+  background: transparent !important; 
+  box-shadow: none !important; 
+  border: none !important;
+  animation: none !important; 
+  transform: none !important;
+  opacity: 1 !important;
+}
+.login-card .card-body {
+  padding: 18px;
+  background: transparent !important; /* 保持背景不变 */
+}
+.card-title {
+  font-weight: 700;
+  color: #fff;
+}
+label {
+  font-size: 14px;
+  color: #fff;
+}
+.form-control {
+  border-radius: 4px;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: #ffffff66;
+}
+/* 禁用全局 .card::before 悬浮填充，仅对登录/注册卡应用 */
+.login-card::before { display: none !important; }
+/* 按钮居中并统一为站点主色（红色） */
+.login-card .d-grid { display: flex !important; justify-content: center; }
+.login-card .btn {
+  background: #C41E3A !important;
+  border-color: #C41E3A !important;
+  color: #fff !important;
+  width: 160px;
+}
+.login-card .btn:hover {
+  background: #A51730 !important;
+  border-color: #A51730 !important;
+}
+.text-center a { color: #fff; }
+
+@media (max-width: 480px) {
+  .login-card { width: 92%; }
+}

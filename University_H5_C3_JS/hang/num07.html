@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4F46E5',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+  <!-- 登录容器 -->
+  <div class="w-full max-w-md bg-white rounded-lg shadow-md p-6 md:p-8">
+    <div class="text-center mb-6">
+      <h1 class="text-2xl font-bold text-gray-800">账号登录</h1>
+      <p class="text-gray-500 mt-1">请输入账号信息登录系统</p>
+    </div>
+    
+    <!-- 登录表单 -->
+    <form class="space-y-4">
+      <div>
+        <label for="username" class="block text-sm font-medium text-gray-700 mb-1">用户名/邮箱</label>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+            <i class="fa fa-user"></i>
+          </span>
+          <input type="text" id="username" 
+                 class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                 placeholder="请输入用户名或邮箱">
+        </div>
+      </div>
+      
+      <div>
+        <div class="flex justify-between mb-1">
+          <label for="password" class="block text-sm font-medium text-gray-700">密码</label>
+          <a href="#" class="text-sm text-primary hover:underline">忘记密码？</a>
+        </div>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+            <i class="fa fa-lock"></i>
+          </span>
+          <input type="password" id="password" 
+                 class="w-full pl-10 pr-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                 placeholder="请输入密码">
+          <button type="button" class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600" id="togglePwd">
+            <i class="fa fa-eye-slash"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="flex items-center">
+        <input type="checkbox" id="remember" class="w-4 h-4 text-primary focus:ring-primary/30 rounded">
+        <label for="remember" class="ml-2 text-sm text-gray-600">记住我</label>
+      </div>
+      
+      <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-md transition-colors">
+        登录
+      </button>
+    </form>
+    
+    <div class="mt-6 text-center">
+      <p class="text-gray-600">还没有账号？ <a href="register.html" class="text-primary font-medium hover:underline">立即注册</a></p>
+    </div>
+  </div>
+
+  <script>
+    // 密码显示/隐藏切换
+    const toggleBtn = document.getElementById('togglePwd');
+    const passwordInput = document.getElementById('password');
+    
+    toggleBtn.addEventListener('click', () => {
+      const type = passwordInput.type === 'password' ? 'text' : 'password';
+      passwordInput.type = type;
+      toggleBtn.querySelector('i').classList.toggle('fa-eye');
+      toggleBtn.querySelector('i').classList.toggle('fa-eye-slash');
+    });
+  </script>
+</body>
+</html>

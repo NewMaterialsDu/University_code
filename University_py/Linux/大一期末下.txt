@@ -1,0 +1,3 @@
+/home/demo01/sites/node-v24.18.0-linux-x64/bin
+
+/home/demo01/sites/layui-vue-admin-master/dist

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小丑</title>
+</head>
+
+<body>
+    <input type="button" onclick="
+    var canvas=document.getElementById('num01');
+    var context=canvas.getContext('2d');
+//脸轮廓
+    context.beginPath();
+    context.arc(250,250,250,0,2*Math.PI,true)
+    context.stroke();
+    context.fillStyle='yellow';
+    context.fill();
+    context.closePath();
+//眼睛左
+    context.beginPath();
+    context.arc(125,125,50,0,1*Math.PI,true)
+    context.strokeStyle='blue';
+    context.lineWidth=5;
+    context.lineCap='round';
+    context.lineoJoin='round';
+    context.stroke();
+    context.closePath();
+//眼睛右
+    context.beginPath();
+    context.arc(375,125,50,0,1*Math.PI,true)
+    context.strokeStyle='blue';
+    context.lineWidth=5;
+    context.lineCap='round';
+    context.lineoJoin='round';
+    context.stroke();
+    context.closePath();
+//鼻子
+    context.beginPath();
+    context.arc(250,250,50,0,2*Math.PI,true)
+    context.stroke();
+    context.fillStyle='red';
+    context.fill();
+    context.closePath();
+//嘴巴下
+    context.beginPath();
+    context.arc(250,200,250,0.12*Math.PI,0.88*Math.PI,false)
+    context.strokeStyle='red';
+    context.lineWidth=10;
+    context.lineCap='round';
+    context.lineoJoin='round';
+    context.stroke();
+    context.closePath();
+//嘴巴上
+    context.beginPath();
+    context.arc(250,100,300,0.22*Math.PI,0.78*Math.PI,false)
+    context.strokeStyle='red';
+    context.lineWidth=10;
+    context.lineCap='round';
+    context.lineoJoin='round';
+    context.stroke();
+    context.closePath();
+
+    " value="画笑脸">
+    <canvas id="num01" width="500px" height="500px"></canvas>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="qimo.vcxproj" Id="de0af757-6b5f-4ac1-9adc-ddc50cb9c42d" />
+</Solution>

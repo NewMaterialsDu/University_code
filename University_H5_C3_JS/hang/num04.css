@@ -1,0 +1,33 @@
+.body {
+    background-size: cover;
+    background-image: url(https://ts1.tc.mm.bing.net/th/id/OIP-C.fxOkXPOTzJpP1_BxYMGHCwHaE9?w=263&h=211&c=8&rs=1&qlt=90&o=6&cb=ucfimg1&pid=3.1&rm=2&ucfimg=1);
+    /* background-image:
+     url(https://ts1.tc.mm.bing.net/th/id/OIP-C.Ak-Byw0oa0mSlq1rJ7f27gHaFj?w=251&h=211&c=8&rs=1&qlt=90&o=6&cb=ucfimg1&pid=3.1&rm=2&ucfimg=1); */
+}
+
+.div1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.from1 {
+    text-align: center;
+    width: 600px;
+    height: 300px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+.from1 h3 {
+    text-align: center;
+}
+
+.from1 button {
+    width: 100px;
+    height: 45px;
+    background-color: rgb(118, 82, 185);
+    border: 1px solid;
+    border-radius: 8px;
+}

@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.quan {
+    background-color: #F5F0E1;
+    font-family: "Microsoft YaHei", "GB2312", sans-serif;
+}
+
+/* 头部 */
+.top {
+
+    background-color: #C41E3A;
+    font-family: "Bold", "GB2312";
+    font-size: 18px;
+    
+}
+
+/* 导航栏 */
+.top-ul {
+    display: flex;
+    flex-direction: row;
+    /* 主轴为横轴 */
+    justify-content: space-around;
+    /* 主轴平均分布在行 */
+    align-items: center;
+    /* 侧轴居中 */
+    flex-wrap: wrap;
+    /* 溢出时自动换行 */
+    width: 100%;
+    height: 50px;
+    background-color: #D4AF37;
+    margin-bottom: 0;
+
+}
+
+.top-li {
+    list-style: none;
+    /* 清楚小点 */
+    padding: 0 10px;
+}
+
+.top-a {
+    text-decoration: none;
+    /* 清除下划线 */
+    color: #FFFFFF;
+    display: block;
+    padding: 5px 10px;
+    /* a标签变为块级元素，填满li */
+    transition: all 0.3s ease;
+    /* 交互时状态转换 */
+    border-radius: 5px;
+
+}
+
+.top-a:hover {
+    text-decoration: none;
+    background-color: #FFFFFF;
+    color: #C41E3A;
+    border-radius: 5px;
+    /* 悬停状态 */
+}
+
+.top-a:active {
+    text-decoration: none;
+    background-color: #F5F0E1;
+    color: #222222;
+    border-radius: 5px;
+    /* 点击状态 */
+}
+
+.top-a.current {
+    text-decoration: none;
+    background-color: #FFFFFF;
+    color: #C41E3A;
+    font-weight: bold;
+    border-radius: 5px;
+    /* 选中状态 */
+}
+
+.carousel {
+    width: 90%;
+    margin: 0 auto;
+    /* margin-top: -1px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 阴影效果 */
+
+}
+
+.section-title {
+    text-align: center;
+    margin: 30px 0;
+    color: #1A3151;
+    font-weight: bold;
+    /*  */
+    position: relative;
+    /* 相对布局 */
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    /* 伪元素选择器，在原来元素后加一些东西 */
+    content: '';
+    /*  */
+    position: absolute;
+    /* 布局 */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #C41E3A;
+}
+
+
+.naver-span-a {
+    list-style: none;
+    /* 清楚小点 */
+    text-decoration: none;
+    /* 清除下划线 */
+    display: block;
+    /* a标签变为块级元素，填满li */
+    color: #1A3151;
+    font-size: 30px;
+
+}
+
+.naver-span-a:hover {
+    list-style: none;
+    /* 清楚小点 */
+    text-decoration: none;
+    /* 清除下划线 */
+}
+
+.naver-span-a:active {
+    list-style: none;
+    /* 清楚小点 */
+    text-decoration: none;
+    /* 清除下划线 */
+}
+
+.card {
+    width: 100%;
+    max-width: 300px;
+    height: 450px;
+    margin: 15px;
+    transition: all 0.3s ease;
+    /* border: none; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 阴影 */
+    border-radius: 5px;
+}
+
+.card-img-top {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    /*  */
+}
+
+.naver-renwu {
+    display: flex;
+    flex-direction: row;
+    /* 主轴为横轴 */
+    justify-content: space-around;
+    /* 主轴平均分布在行 */
+    align-items: center;
+    /* 侧轴居中 */
+    flex-wrap: wrap;
+    /* 溢出时自动换行 */
+    width: 100%;
+    padding: 0 20px 30px;
+}
+
+.naver-zongpai {
+    display: flex;
+    flex-direction: row;
+    /* 主轴为横轴 */
+    justify-content: space-around;
+    /* 主轴平均分布在行 */
+    align-items: center;
+    /* 侧轴居中 */
+    flex-wrap: wrap;
+    /* 溢出时自动换行 */
+    width: 100%;
+    padding: 0 20px 30px;
+}
+
+.naver {
+    padding: 20px 0;
+}
+
+.diye {
+    width: 100%;
+    height: 300px;
+    background-color: #181231;
+    color: #FFFFFF;
+}
+
+.diye-div {
+    display: flex;
+    flex-direction: column;
+    /* 主轴为竖轴 */
+    justify-content: space-around;
+    /* 主轴平均分布在行 */
+    align-items: center;
+    /* 侧轴居中 */
+    flex-wrap: wrap;
+    /* 溢出时自动换行 */
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.diye-item a {
+    color: #D4AF37;
+    text-decoration: none;
+    /* 去除下划线 */
+}
+
+.diye-item a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.card {
+    background-color: #F5F0E1;
+    /* text-overflow: ellipsis; */
+
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-color: #D4AF37;
+    border-radius: 8px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    /*  */
+}
+
+.card-title {
+    color: #C41E3A;
+    margin-bottom: 15px;
+    font-weight: bold;
+    /*  */
+}
+
+.card-text {
+    flex-grow: 1;
+    /* 子元素按比例缩放 */
+    color: #333333;
+}
+
+@media (max-width: 768px) {
+
+    /* 媒体查询，自适应屏幕大小 */
+    .top-ul {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .top-li {
+        margin: 5px 0;
+    }
+
+    .card {
+        max-width: 100%;
+        height: auto;
+        margin: 10px;
+    }
+
+    .card-img-top {
+        height: auto;
+    }
+
+    .diye {
+        height: auto;
+        padding: 30px 0;
+    }
+
+    .diye-div {
+        height: auto;
+        gap: 15px;
+        /*  */
+    }
+}
+
+.card {
+    
+    opacity: 0;
+    /* 初始状态：隐藏在下方，表示透明度为0 */
+    transform: translateY(500px);
+    /* 动画设置：从下方滑入并显示 */
+    animation: slideUp 0.6s ease-out forwards;
+    /* animation为定义动画的简写：（六个属性，前两个为必须）动画名称 时间  速度曲线（上方表示动画以低速结束） 动画开始前的延迟 播放次数 动画方向   */
+    animation-timeline: view();
+    /*  */
+    
+    animation-range-start: entry 20%;
+    /* 当元素顶部进入视口20%时开始动画 */
+   
+    animation-range-end: cover 50%;
+     /* 当元素底部进入视口50%时完成动画 */
+}
+
+/* 滑入动画关键帧 */
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        /* 透明度为1 */
+        transform: translateY(0);
+    }
+}
+.card::before {
+    /* 元素前面插入 */
+    content: "";
+    /* 不存在插入的东西 */
+    position: absolute;
+    /* 布局设置（绝对定位） */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    /* 初始状态 */
+    background: #C41E3A; 
+    /* 填充颜色 */
+    transition: height 0.4s ease;
+    /* 简写属性： */
+    z-index: -1; 
+    /* 设置层级为-1，默认为0，层级越高，就越在上方，放在内容下方 */
+}
+
+.card:hover::before {
+    height: 100%; 
+}

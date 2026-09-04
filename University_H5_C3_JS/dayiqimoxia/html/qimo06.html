@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 — 京剧猫</title>
+    <link rel="stylesheet" href="../bootstrap-4.6.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/qimo01.css">
+    <link rel="stylesheet" href="../css/qimo06.css">
+</head>
+
+<body>
+    <div class="quan">
+        <div class="top">
+            <!-- 导航栏 -->
+            <ul class="top-ul">
+                <li class="top-li"><a class="top-a" href="./qimo01.html" target="_blank">首页</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo02.html" target="_blank">人物</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo03.html" target="_blank">宗派</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo04.html" target="_blank">世界观</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo05.html" target="_blank">关于作者</a></li>
+                <li class="top-li"><a class="top-a current" href="./qimo06.html" target="_blank">登录</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo07.html" target="_blank">注册</a></li>
+            </ul>
+        </div>
+
+        <div class="login-wrap d-flex align-items-center justify-content-center">
+        <div class="login-card card shadow-sm">
+            <div class="card-body">
+                <h3 class="card-title text-center mb-4">账号登录</h3>
+
+                <form id="loginForm" novalidate>
+                    <div class="form-group mb-3">
+                        <label for="username">用户名或邮箱</label>
+                        <input type="text" class="form-control" id="username" placeholder="请输入用户名或邮箱" required>
+                        <div class="invalid-feedback">请输入用户名或邮箱。</div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="password">密码</label>
+                        <input type="password" class="form-control" id="password" placeholder="请输入密码" required minlength="6">
+                        <div class="invalid-feedback">请输入至少6位密码。</div>
+                    </div>
+                    <div class="form-group form-check mb-3">
+                        <input type="checkbox" class="form-check-input" id="remember">
+                        <label class="form-check-label" for="remember">记住我</label>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">登录</button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="#" id="forgotPwd">忘记密码？</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        //直接执行函数
+        (function () {
+            // 获取登录表单元素
+            const form = document.getElementById('loginForm');
+
+            // 给表单添加提交事件，当用户点击submit按钮时触发
+            form.addEventListener('submit', function (e) {
+                // 阻止表单默认提交行为，避免页面刷新
+                e.preventDefault();
+
+                // 获取用户名和密码输入框元素
+                const username = document.getElementById('username');
+                const password = document.getElementById('password');
+
+                // 默认认为表单有效
+                let valid = true;
+
+                // 检查用户名是否为空或只有空格
+                if (!username.value.trim()) {
+                    // 如果输入不合法，显示错误
+                    username.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    // 输入合法时，移除错误
+                    username.classList.remove('is-invalid');
+                }
+
+                // 检查密码是否为空或长度少于6位
+                if (!password.value || password.value.length < 6) {
+                    password.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    password.classList.remove('is-invalid');
+                }
+
+                // 如果有任何一项不合法，则不继续执行后续登录逻辑
+                if (!valid) return;
+
+                // 这里模拟登录成功，弹出提示框显示用户名
+                alert('登录成功\n用户名：' + username.value);
+
+                // 重置表单，清空输入框内容
+                form.reset();
+            });
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div span {
+            color: red;
+        }
+
+        div>p {
+            color: aqua;
+            /* 只选子代 */
+        }
+
+        div,
+        span,
+        p {
+            font-size: 36px;
+            /* 并集选择器 */
+        }
+        p.box{
+            color: red;
+            /* 交集选择器，只选boxp标签，有标签选择器必须放在最前面 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>(儿子span)后代选择器：父选择器 空格 子选择器（所有的后代span都生效）</span>
+        <p>
+            子代p标签
+            <span>孙子的span</span>
+        </p>
+    </div>
+
+    <div class="box">
+        boxdiv标签
+    </div>
+    <p>
+        p标签
+    </p>
+    <p class="box">
+        boxp标签
+    </p>
+</body>
+
+</html>

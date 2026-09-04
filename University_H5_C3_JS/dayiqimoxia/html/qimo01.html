@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京剧猫的世界</title>
+    <link rel="stylesheet" href="../bootstrap-4.6.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/qimo01.css">
+
+
+</head>
+
+<body>
+    <div class="quan">
+        <!-- 头部 -->
+        <div class="top">
+            <!-- 导航栏 -->
+            <ul class="top-ul">
+                <li class="top-li"><a class="top-a current" href="./qimo01.html" target="_blank">首页</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo02.html" target="_blank">人物</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo03.html" target="_blank">宗派</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo04.html" target="_blank">世界观</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo05.html" target="_blank">关于作者</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo06.html" target="_blank">登录</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo07.html" target="_blank">注册</a></li>
+            </ul>
+            <!-- 轮播图 -->
+            <div class="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../images/将图片变高清.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../images/将图片变高清 (3).png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../images/将图片变高清 (5).png" class="d-block w-100" alt="...">
+                        </div>
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
+                        data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators"
+                        data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </button>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+        <!-- 正文 -->
+        <div class="naver">
+
+            <div>
+                <!-- 人物卡片 -->
+
+                <h2 class="section-title">人物</h2>
+                <div class="naver-renwu" id="rolesContainer">
+                    <!-- 占位元素 -->
+                </div>
+            </div>
+            <div>
+                <!-- 宗派卡片 -->
+                <h2 class="section-title">咪咪宗派</h2>
+                <div class="naver-zongpai" id="sectsContainer">
+                    <!-- 占位元素 -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="text-center my-3">
+        <button id="showRoleTipBtn" class="btn btn-warning mx-2">角色提示</button>
+        <button id="showSectTipBtn" class="btn btn-info mx-2">宗派提示</button>
+        <p id="tipText" class="mt-3">欢迎来到京剧猫的世界！点击上方按钮查看提示。</p>
+    </div>
+    <!-- 底页 -->
+    <div class="diye">
+
+        <div class="diye-div">
+            <div class="diye-item"><a class="biaoti" href="#">关于作者</a></div>
+            <div class="diye-item">QQ：2049727410</div>
+            <div class="diye-item">邮箱：19231331237@163.com</div>
+            <div class="diye-item">电话：18106724715</div>
+        </div>
+    </div>
+    </div>
+
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="../bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // 角色提示按钮的点击事件
+    document.getElementById('showRoleTipBtn').addEventListener('click', function () {
+        // 这是一个提示内容的数组，点击按钮后会从中随机选一个
+        const roleTips = [
+            '西门的眼宗能力很强，擅长预言与策略。',
+            '墨紫为了保护小青曾选择禁术。',
+            '小青对整洁敏感，是团队的细心守护者。',
+            '墨邪外表冷酷，内心隐藏很多秘密。'
+        ];
+        // Math.random() 生成一个 0 到 1 之间的随机数，乘以数组长度后取整，得到数组中的随机索引
+        const tip = roleTips[Math.floor(Math.random() * roleTips.length)];
+        // 将随机提示写入页面中的提示文本区域
+        document.getElementById('tipText').textContent = '【角色提示】' + tip;
+        // 弹出提示，告诉用户角色提示已更新
+        alert('角色提示已更新！');
+    });
+
+    // 宗派提示按钮的点击事件
+    document.getElementById('showSectTipBtn').addEventListener('click', function () {
+        // 这是一个宗派提示内容的数组，点击按钮后会从中随机选一个
+        const sectTips = [
+            '纳宗负责测试新弟子，是猫土人才入口。',
+            '录宗管理历史文献，维护猫土记载。',
+            '督宗负责监督强者，防止滥用力量。',
+            '判宗执行律法，守护猫土秩序。'
+        ];
+        // 随机选择一个宗派提示
+        const tip = sectTips[Math.floor(Math.random() * sectTips.length)];
+        // 将随机提示写入页面中的提示文本区域
+        document.getElementById('tipText').textContent = '【宗派提示】' + tip;
+        // 弹出提示，告诉用户宗派提示已更新
+        alert('宗派提示已更新！');
+    });
+</script>
+
+<script>
+    // 定义角色数据，包含图片、名字和描述
+    const roles = [
+        { img: '../images/新对话.png', title: '西门', text: '眼宗宗主，有预言瞳，瞳术高强。用冷酷伪装温柔，以谋略将好友瞳瞳关入冰牢来守护他。' },
+        { img: '../images/新对话 (1).png', title: '墨紫', text: '身宗长宫主，小青姐姐。被墨邪蒙骗练禁术，后知晓真相，代替母亲舍身封印混沌兽。' },
+        { img: '../images/新对话(4).png', title: '小青', text: '星罗班成员，身宗小宫主。知识丰富有洁癖，后期性格渐柔，和伙伴一同踏上拯救猫土的旅程。' },
+        { img: '../images/renwu.webp', title: '墨邪', text: '墨紫与小青的舅父，野心勃勃。谎话连篇，为夺宗主位不择手段，最终被刑天囚禁放逐。' }
+    ];
+
+    // 定义宗派数据，包含图片、名字和描述
+    const sects = [
+        { img: '../images/纳.png', title: '纳宗', text: '集中培训、测试有资质的猫，并把通过测试的弟子送入合适的宗派。' },
+        { img: '../images/录.png', title: '录宗', text: '主掌猫土历史的撰记，所有猫土的文献记录，全由录宗管理。' },
+        { img: '../images/督.png', title: '督宗', text: '主管督查，监督和制约强大者，箱子放出的韵光可困住犯法之人。' },
+        { img: '../images/判.png', title: '判宗', text: '执行猫土律法，判定善恶并予以惩处。' }
+    ];
+
+    // 这个函数负责把数据渲染成卡片并插入到页面中
+    function renderCards(list, containerId) {
+        // 找到要放卡片的容器元素
+        const container = document.getElementById(containerId);
+        // 清空容器内部内容，防止重复渲染
+        container.innerHTML = '';
+        // 遍历数据数组，每个元素都创建一个卡片
+        list.forEach(item => {
+            // 创建一个新的 div 元素来作为卡片
+            const col = document.createElement('div');
+            // 设置卡片样式
+            col.className = 'card';
+            col.style.width = '18rem';
+            // 将图片、标题和内容拼成卡片的 HTML
+            col.innerHTML =
+                `
+                <img src="${item.img}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">${item.title}</h5>
+                    <p class="card-text">${item.text}</p>
+                </div>
+            `
+                ;
+            // 把卡片添加到容器中
+            container.appendChild(col);
+        });
+    }
+
+    // 页面加载完成后执行，渲染角色卡片和宗派卡片
+    document.addEventListener('DOMContentLoaded', function () {
+        renderCards(roles, 'rolesContainer');
+        renderCards(sects, 'sectsContainer');
+    });
+</script>
+
+</html>

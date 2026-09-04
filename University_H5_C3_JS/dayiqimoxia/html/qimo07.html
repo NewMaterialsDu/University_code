@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 — 京剧猫</title>
+    <link rel="stylesheet" href="../bootstrap-4.6.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/qimo01.css">
+    <link rel="stylesheet" href="../css/qimo06.css">
+</head>
+
+<body>
+    <div class="quan">
+        <div class="top">
+            <!-- 导航栏 -->
+            <ul class="top-ul">
+                <li class="top-li"><a class="top-a" href="./qimo01.html" target="_blank">首页</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo02.html" target="_blank">人物</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo03.html" target="_blank">宗派</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo04.html" target="_blank">世界观</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo05.html" target="_blank">关于作者</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo06.html" target="_blank">登录</a></li>
+                <li class="top-li"><a class="top-a current" href="./qimo07.html" target="_blank">注册</a></li>
+            </ul>
+        </div>
+
+        <div class="login-wrap d-flex align-items-center justify-content-center">
+            <div class="login-card card shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">创建账号</h3>
+
+                    <form id="registerForm" novalidate>
+                        <div class="form-group mb-3">
+                            <label for="reg-username">用户名</label>
+                            <input type="text" class="form-control" id="reg-username" placeholder="请输入用户名" required>
+                            <div class="invalid-feedback">请输入用户名。</div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="reg-email">邮箱</label>
+                            <input type="email" class="form-control" id="reg-email" placeholder="请输入邮箱" required>
+                            <div class="invalid-feedback">请输入有效邮箱。</div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="reg-password">密码</label>
+                            <input type="password" class="form-control" id="reg-password" placeholder="设置密码（至少6位）" required minlength="6">
+                            <div class="invalid-feedback">请输入至少6位密码。</div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="reg-password2">确认密码</label>
+                            <input type="password" class="form-control" id="reg-password2" placeholder="请再次输入密码" required>
+                            <div class="invalid-feedback">两次密码需一致。</div>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">注册</button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="qimo06.html">已有账号？登录</a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 立即执行函数：避免变量污染，全局范围内不会泄露
+        (function () {
+            // 获取注册表单元素
+            const form = document.getElementById('registerForm');
+
+            // 给表单添加提交事件，当用户点击“注册”按钮时触发
+            form.addEventListener('submit', function (e) {
+                // 阻止表单默认提交，防止页面刷新
+                e.preventDefault();
+
+                // 获取每个输入框元素
+                const u = document.getElementById('reg-username');
+                const email = document.getElementById('reg-email');
+                const p1 = document.getElementById('reg-password');
+                const p2 = document.getElementById('reg-password2');
+
+                // 默认认为表单有效
+                let valid = true;
+
+                // 去除两端空格，如果没有去除，则提示错误
+                if (!u.value.trim()) {
+                    u.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    u.classList.remove('is-invalid');
+                }
+
+                // 检查邮箱是否为空
+                if (!email.value.trim()) {
+                    email.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    email.classList.remove('is-invalid');
+                }
+
+                // 检查密码是否为空，并且长度是否至少6位
+                if (!p1.value || p1.value.length < 6) {
+                    p1.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    p1.classList.remove('is-invalid');
+                }
+
+                // 检查两次密码是否一致
+                if (p1.value !== p2.value) {
+                    p2.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    p2.classList.remove('is-invalid');
+                }
+
+                // 如果有任何不合法的输入，直接退出，不执行后续操作
+                if (!valid) return;
+
+                // 模拟注册成功提示，显示用户名和邮箱
+                alert('注册成功\n用户名：' + u.value + '\n邮箱：' + email.value);
+
+                // 重置表单，清空所有输入框
+                form.reset();
+            });
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+# Prerequisites
+*.d
+
+# Compiled object files
+*.slo
+*.lo
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Linker files
+*.ilk
+
+# Debugger Files
+*.pdb
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Debug information files
+*.dwo
+
+# Visual Studio temporary folder (ignore on all computers)
+.vs/
+
+# Visual Studio 编译输出目录（忽略所有 Debug/Release 文件夹）
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/

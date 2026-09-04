@@ -1,0 +1,77 @@
+show databases ;
+
+# drop table user;
+
+# DML命令添加数据：
+# 1.指定字段添加数据
+# insert into 表名 (字段名1，字段名2，...) values (值1，值2，...);
+#2.给全部字段添加数据
+# insert into 表名 values (值1，值2，...);
+# 3.批量添加数据
+# insert 表名 (字段名1，字段名2，...) values (值1，值2，...),(值1，值2，...),(值1，值2，...);
+# insert 表名 values (值1，值2，...),(值1，值2，...),(值1，值2，...);
+
+insert into employee (id, workno, name, gender, age, idcard, entrydate) VALUES (1,'1','Itcast','男',10,'123456789012346578','2001-05-01');
+insert into employee (id, workno, name, gender, age, idcard, entrydate) VALUES (2,'2','Itcast2','男',1,'123456789012346578','2005-03-01');
+
+select * from employee;
+
+insert into employee values(3,'3','Itcast3','男',12,'123456789012345678','2006-04-06');
+insert into employee values(4,'4','Itcast4','男',18,'123456789012345678','2006-04-06'),(5,'5','Itcast5','男',18,'123456789012345678','2006-04-06');
+
+# 13.DML更新和删除
+# DML修改数据
+# update 表名 set 字段名1=值1，字段名2=值2...[where 条件];中括号表示可选
+# 修改id为1的数据，将name修改为itheima
+update employee set name = 'itheima' where id=1;
+# 修改两条
+update employee set name = '小昭',gender='女' where id=1;
+# 修改全部
+update employee set entrydate='2001-01-01';
+
+# DML删除数据
+# delete from 表名 [where 条件];
+delete from employee;
+
+# 15.DQL
+# 1.查询返回多个字段
+# select 字段1，字段2，字段3...from 表名；
+# select * form 表名；
+# 2.设置别名
+# select 字段1 [as 别名]，字段2 [as 别名]...form 表名；
+# 3.去除重复记录
+# select distinct 字段列表 form 表名；
+
+insert into employee(id, workno, name, gender, age, idcard,workaddress,entrydate)
+values
+(1,'1','刘岩','女',20,'12345678912345678','北京','2000-01-01'),
+(2,'2','张无忌','男',18,'123456789012345670','北京','2005-09-01'),
+(3,'3','韦一笑','男',38,'123456789712345670','上海','2005-08-01'),
+(4,'4','赵敏','女',18,'123456757123845670','北京','2009-12-01'),
+(5,'5','小昭','女',16,'123456769012345678','上海','2007-07-01'),
+(6,'6','杨逍','男',28,'12345678931234567X','北京','2006-01-01'),
+(7,'7','范瑶','男',40,'123456789212345670','北京','2005-05-01'),
+(8,'8','黛绮丝','女',38,'123456157123645670','天津','2015-05-01'),
+(9,'9','范凉凉','女',45,'123156789012345678','北京','2010-04-01'),
+(10,'10','陈友谅','男',53,'123456789012345670','上海','2011-01-01'),
+(11,'11','张士诚','男',55,'123567897123465670','江苏','2015-05-01'),
+(12,'12','常遇春','男',32,'123446757152345670','北京','2004-02-01'),
+(13,'13','张三丰','男',88,'123656789012345678','江苏','2020-11-01'),
+(14,'14','灭绝','女',65,'123456719012345670','西安','2019-05-01'),
+(15,'15','胡青牛','男',70,'12345674971234567X','西安','2018-04-01'),
+(16,'16','周芷若','女',18,null,'北京','2012-06-01');
+
+# 基本查询
+# 1.查询指定字段 name ，workno， age 返回
+select name,workno,age from employee;
+# 2.查询所有字段
+select id, workno, name, gender, age, idcard, entrydate, workaddress from employee;
+# 实际中使用星号不直观，且影响效率
+select * from employee;
+# 3.查询所有员工的工作地址并起别名
+select workaddress as '工作地址' from employee;
+# as可以省略，效果一样
+# 4.查询员工的工作地址（不要重复）;
+select distinct workaddress '工作地址' from employee;
+
+

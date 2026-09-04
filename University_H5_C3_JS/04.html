@@ -1,0 +1,110 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页标题</title>
+</head>
+
+
+
+
+
+
+
+
+<body>
+给用户看的
+
+
+
+
+
+    
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>咪咪的世界观</title>
+    <link rel="stylesheet" href="../bootstrap-4.6.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/qimo04.css">
+</head>
+<body>
+    <div class="quan">
+        <!-- 头部 -->
+        <div class="top">
+            <!-- 导航栏 -->
+            <ul class="top-ul">
+                <li class="top-li"><a class="top-a" href="./qimo01.html" target="_blank">首页</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo02.html" target="_blank">人物</a></li>
+                <li class="top-li"><a class="top-a" href="./qimo03.html" target="_blank">宗派</a></li>
+                <li class="top-li"><a class="top-a current" href="./qimo04.html" target="_blank">世界观</a></li>
+                <li class="top-li"><a class="top-a " href="./qimo05.html" target="_blank">关于作者</a></li>
+            </ul>
+        </div>
+        <!-- 新增世界观内容容器 -->
+        <div class="naver">
+            <!-- 新增主要世界观介绍标题，沿用统一的section-title样式 -->
+            <h2 class="section-title">猫土世界</h2>
+            <!-- 新增主要世界观介绍段落容器，使用container类让内容居中并限制宽度 -->
+            <div class="container">
+                <!-- 新增段落内容，设置margin-bottom增加段落间距 -->
+                <p class="mb-4">猫土是一个由猫统治的世界，这里的猫被称为"京剧猫"，它们继承了古老的"韵力"，并能通过独特的京剧招式运用这种力量。整个世界以中国传统文化为背景，融合了京剧艺术的元素，形成了独特的文化体系。</p>
+                <p class="mb-4">猫土曾是一个和平繁荣的地方，直到"混沌"的出现打破了这份宁静。混沌会侵蚀京剧猫的内心，让它们变得邪恶且失去理智，成为危害猫土的魔物。</p>
+            </div>
+
+            <!-- 新增韵力介绍标题 -->
+            <h2 class="section-title">韵力与混沌</h2>
+            <!-- 新增韵力与混沌内容容器，使用卡片布局展示 -->
+            <div class="naver-world">
+                <!-- 新增韵力介绍卡片，沿用card样式 -->
+                <div class="card" style="width: 18rem;">
+                    <!-- 新增韵力相关图片 -->
+                    <img src="../images/yundi.jpg" class="card-img-top" alt="韵力展示"> <!-- 假设存在该图片 -->
+                    <div class="card-body">
+                        <h5 class="card-title">韵力</h5>
+                        <p class="card-text">韵力是京剧猫的核心力量，源自内心的正义与信念。不同宗派的京剧猫能操控不同属性的韵力，如做宗的强化韵力、唱宗的音波韵力等。韵力不仅能用于战斗，还能用于创造和守护。</p>
+                    </div>
+                </div>
+                <!-- 新增混沌介绍卡片 -->
+                <div class="card" style="width: 18rem;">
+                    <!-- 新增混沌相关图片 -->
+                    <img src="../images/hundun.jpg" class="card-img-top" alt="混沌展示"> <!-- 假设存在该图片 -->
+                    <div class="card-body">
+                        <h5 class="card-title">混沌</h5>
+                        <p class="card-text">混沌是猫土的邪恶力量，由负面情绪滋生。被混沌侵蚀的猫会失去理智，变得残暴好斗。十二宗派的京剧猫们一直致力于抵抗混沌，守护猫土的和平。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 新增宗派与地域标题 -->
+            <h2 class="section-title">宗派与地域</h2>
+            <!-- 新增宗派与地域内容容器 -->
+            <div class="container">
+                <p class="mb-4">猫土分为多个地域，每个地域由不同的宗派负责守护。十二宗派（文宗四守和武宗八方）各自占据不同的领地，有着独特的文化和习俗，但它们的共同目标是对抗混沌，维护猫土的平衡。</p>
+                <!-- 新增地域列表，使用无序列表展示 -->
+                <ul class="list-group mb-4">
+                    <li class="list-group-item bg-transparent border-primary">身宗领地：位于水乡，猫民擅长以柔克刚的身法</li>
+                    <li class="list-group-item bg-transparent border-primary">打宗领地：地处平原，以体术和火焰力量闻名</li>
+                    <li class="list-group-item bg-transparent border-primary">眼宗领地：坐落在高原，弟子们拥有强大的瞳术</li>
+                    <li class="list-group-item bg-transparent border-primary">手宗领地：遍布工坊，以精湛的制造技艺著称</li>
+                </ul>
+            </div>
+
+            <!-- 新增历史背景标题 -->
+            <h2 class="section-title">历史背景</h2>
+            <!-- 新增历史背景内容容器 -->
+            <div class="container">
+                <p>传说很久以前，猫土被一位神秘的"修"所拯救，他教会了猫们运用韵力，并创立了十二宗派。然而，随着时间的推移，混沌再次蔓延，新一代的京剧猫们（如星罗班）踏上了拯救猫土的征程，他们在旅途中不断成长，揭露混沌背后的秘密。</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="../bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
+</html>

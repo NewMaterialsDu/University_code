@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Project19(最短路径-弗洛伊德Floyd).vcxproj" Id="87d3b5db-9436-42ae-9d90-31688cbc9413" />
+</Solution>

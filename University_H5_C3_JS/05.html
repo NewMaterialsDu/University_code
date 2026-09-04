@@ -1,0 +1,349 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    
+
+
+
+<body>
+
+    
+
+
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京剧猫世界观 - 猫土的传奇</title>
+    <style>
+        /* 全局样式重置与基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+
+        body {
+            background-color: #f8f5f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 头部导航样式 */
+        header {
+            background: linear-gradient(135deg, #c2185b, #e91e63);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* 英雄区样式 */
+        .hero {
+            background: url('https://img.ixintu.com/download/jpg/202109/28/ixintu_12596628_1.jpg') no-repeat center center;
+            background-size: cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* 主要内容区域样式 */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .section h2 {
+            color: #c2185b;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f0e6e6;
+            font-size: 1.8rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        /* 宗派网格布局 */
+        .clans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .clan-card {
+            background: #fdf2f8;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .clan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .clan-card h3 {
+            color: #c2185b;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        /* 响应式样式 */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .container {
+                margin: 2rem auto;
+            }
+        }
+
+        /* 页脚样式 */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">京剧猫 · 猫土</div>
+            <nav>
+                <ul>
+                    <li><a href="#world">世界观</a></li>
+                    <li><a href="#clans">十二宗派</a></li>
+                    <li><a href="#power">韵力体系</a></li>
+                    <li><a href="#background">背景故事</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 英雄区 -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>京剧猫的奇幻世界</h1>
+            <p>在猫土之上，韵力与混沌交织，京剧猫们以唱念做打为武器，守护着这片土地的和平</p>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <!-- 世界观部分 -->
+        <section class="section" id="world">
+            <h2>世界观：猫土的设定</h2>
+            <p>京剧猫的世界被称为<strong>猫土</strong>，这是一个由猫类主宰的奇幻大陆。猫土的文明高度发达，融合了中国传统京剧文化与奇幻元素，这里的猫们并非普通的猫咪，而是拥有特殊能力的<strong>京剧猫</strong>。</p>
+            <p>猫土被划分为不同的区域，每个区域由不同的宗派京剧猫守护。原本的猫土充满了纯净的<strong>韵力</strong>，这是京剧猫力量的来源，也是维持猫土平衡的核心能量。但随着<strong>混沌</strong>的出现，猫土陷入了危机，混沌会污染猫的心智，使其变得狂暴且失去理智。</p>
+            <p>京剧猫的使命就是运用自身的韵力，净化混沌，守护猫土上的所有生灵，恢复世界的和平与秩序。</p>
+        </section>
+
+        <!-- 十二宗派部分 -->
+        <section class="section" id="clans">
+            <h2>十二宗派：京剧猫的核心族群</h2>
+            <p>京剧猫根据能力和流派的不同，分为<strong>十二宗派</strong>，对应京剧中的“唱、念、做、打”以及不同的行当和技法。十二宗派分为四大宗主派和八大附属派，共同构成了京剧猫的族群体系。</p>
+            <div class="clans-grid">
+                <div class="clan-card">
+                    <h3>唱宗</h3>
+                    <p>以“唱”为核心能力，韵力蕴含在声音之中，通过歌声释放强大的力量，能鼓舞人心也能震慑敌人，是十二宗派中最具感染力的宗派。</p>
+                </div>
+                <div class="clan-card">
+                    <h3>念宗</h3>
+                    <p>擅长“念”功，能运用精神力量和意念进行攻击、防御甚至操控，能力偏向于精神层面，是智慧型的宗派。</p>
+                </div>
+                <div class="clan-card">
+                    <h3>做宗</h3>
+                    <p>注重“做”功，体术和身法是其核心，拥有极强的身体素质和近身战斗能力，动作敏捷，招式刚劲有力。</p>
+                </div>
+                <div class="clan-card">
+                    <h3>打宗</h3>
+                    <p>以“打”为核心，精通各种武器和格斗技巧，攻击力极强，是十二宗派中战斗力最直接的宗派。</p>
+                </div>
+                <div class="clan-card">
+                    <h3>步宗</h3>
+                    <p>擅长步法和速度，行动如风，能凭借极致的速度躲避攻击或发动突袭，身法诡谲多变。</p>
+                </div>
+                <div class="clan-card">
+                    <h3>手宗</h3>
+                    <p>精通手工技艺和机械制造，能打造出强大的武器和机关，同时也能运用手部的韵力进行战斗。</p>
+                </div>
+                <div class="clan-card">
+                    <h3>眼宗</h3>
+                    <p>拥有超凡的视力，能看破幻象、洞察弱点，甚至可以通过眼神释放韵力攻击敌人。</p>
+                </div>
+                <div class="clan-card">
+                    <h3>身宗</h3>
+                    <p>注重身段和柔韧性，招式优美且极具杀伤力，同时擅长水系韵力的运用。</p>
+                </div>
+                <div class="clan-card">
+                    <h3>督宗</h3>
+                    <p>负责监管所有京剧猫，拥有审判和执法的权力，能力偏向于追踪和制裁。</p>
+                </div>
+                <div class="clan-card">
+                    <h3>录宗</h3>
+                    <p>掌管猫土的历史和文献，擅长记录和分析，能从过往的资料中找到解决问题的方法。</p>
+                </div>
+                <div class="clan-card">
+                    <h3>判宗</h3>
+                    <p>负责审判混沌罪犯，拥有裁决的能力，招式偏向于封印和制裁。</p>
+                </div>
+                <div class="clan-card">
+                    <h3>纳宗</h3>
+                    <p>负责招收和培养京剧猫新人，擅长发掘猫的天赋，是京剧猫族群的“招生办”。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 韵力体系部分 -->
+        <section class="section" id="power">
+            <h2>韵力体系：京剧猫的力量之源</h2>
+            <p><strong>韵力</strong>是京剧猫的核心力量，来源于猫土的自然能量，也是京剧猫区别于普通猫的根本特征。韵力存在于京剧猫的身体之中，主要汇聚在<strong>韵纹</strong>（京剧猫身上的花纹）和<strong>韵核</strong>（体内的能量核心）中。</p>
+            <p>韵力的运用与京剧的表演技法紧密结合，不同宗派的京剧猫运用韵力的方式不同：唱宗通过歌声催动韵力，做宗通过肢体动作释放韵力，打宗通过武器和格斗技巧传导韵力。</p>
+            <p>韵力有纯度之分，纯度越高，力量越强。混沌会污染韵力，使韵力变得浑浊，甚至会让京剧猫失去韵力能力。京剧猫可以通过修炼提升韵力纯度，也可以通过净化混沌来恢复自身的韵力。</p>
+            <p>此外，部分京剧猫还拥有<strong>韵力招式</strong>，这些招式通常以京剧的招式名称命名，如“惊天雷”“闪电流星”等，是京剧猫战斗的主要手段。</p>
+        </section>
+
+        <!-- 背景故事部分 -->
+        <section class="section" id="background">
+            <h2>背景故事：混沌的入侵与京剧猫的抗争</h2>
+            <p>猫土原本是一个和平的世界，京剧猫们运用韵力守护着这片土地。直到<strong>黯</strong>的出现，黯是一只被混沌污染的京剧猫，他拥有强大的混沌力量，带领着被混沌污染的猫群（称为“魔物”）入侵猫土，试图统治整个猫土。</p>
+            <p>黯的入侵让猫土陷入了黑暗，许多京剧猫被混沌污染，十二宗派也遭受了重创。为了对抗黯和混沌，幸存的京剧猫们组成了反抗军，其中以主角<strong>白糖</strong>（一只拥有修派韵力的白猫）为首的小队最为关键。</p>
+            <p>白糖与伙伴武崧（打宗）、小青（身宗）、大飞（唱宗）一起，踏上了净化混沌、寻找十二宗派、对抗黯的旅程。他们在旅途中不断成长，解锁新的韵力能力，结识了各种京剧猫，共同为恢复猫土的和平而战斗。</p>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>京剧猫世界观介绍 © 2025 所有内容仅供科普交流使用</p>
+    </footer>
+</body>
+</html>
