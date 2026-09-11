@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>现在是2026年9月11日，上午9点11分</p>
+
+</body>
+<script>
+    let a = "'Hello, World!'";
+    console.log(a);
+    let b = '\'str\'';
+    //转义字符
+    console.log(b);
+    let c = "\n"; //换行符
+    console.log(c);
+    let d = "\t"; //制表符
+    console.log(d);
+    let e = "\r"; //回车符
+    console.log(e);
+    let f = "\\"; //反斜杠
+    console.log(f);
+    let g = "\'"; //单引号
+    console.log(g);
+
+    //字符串拼接
+    let h = "Hello, ";
+    let i = "World!";
+    console.log(h + i);
+    let j = `Hello, ${i}`; //模板字符串
+    console.log(j);
+    
+    //let age = prompt("请输入你的年龄：");
+    //alert("你输入的年龄是：" + age);
+
+    //boolean类型
+    let isTrue = true;
+    let isFalse = false;
+    console.log(isTrue + 1);
+    console.log(isFalse + 1);
+
+    //数据类型的判断
+    let k = 123;
+    console.log(typeof k);
+    let l = "Hello, World!";
+    console.log(typeof l);
+    let m = true;
+    console.log(typeof m);
+    let n = null;
+    console.log(typeof n);
+    let o = undefined;
+    console.log(typeof o);
+    let p = {};
+    console.log(typeof p);
+    let q = function() {};
+    console.log(typeof q);
+
+    //基本数据类型转换
+    let r = "123";
+    let s = Number(r);
+    console.log(typeof s, s);
+    let t = "456";
+    let u = parseInt(t);
+    console.log(typeof u, u);
+    let v = "789.012";
+    let w = parseFloat(v);
+    console.log(typeof w, w);
+    let x = "abc";
+    let y = Number(x);
+    console.log(typeof y, y);
+    let z = String(123);
+    console.log(typeof z, z);
+
+    //加法计算器
+    let num1 = prompt("请输入第一个数字：");
+    let num2 = prompt("请输入第二个数字：");
+    let sum = Number(num1) + Number(num2);
+    if (typeof sum === "number" && !isNaN(sum)) {
+        alert("两个数字的和是：" + sum);
+    } else {
+        alert("输入的不是有效数字！");
+    }
+
+    //关系运算符
+    let a1 = 5;
+    let a2 = 10;
+    console.log(a1 < a2); // true
+    console.log(a1 > a2); // false
+    console.log(a1 <= a2); // true
+    console.log(a1 >= a2); // false
+    console.log(a1 == a2); // false
+    console.log(a1 != a2); // true
+
+    //赋值运算符
+    let b1 = 5;
+    b1 += 3; // b1 = b1 + 3
+    console.log(b1); // 8
+    let b2 = 10;
+    b2 -= 2; // b2 = b2 - 2
+    console.log(b2); // 8
+    let b3 = 15;
+    b3 *= 2; // b3 = b3 * 2
+    console.log(b3); // 30
+    let b4 = 20;
+    b4 /= 2; // b4 = b4 / 2
+    console.log(b4); // 10
+    let b5 = 25;
+    b5 %= 3; // b5 = b5 % 3
+    console.log(b5); // 1
+    
+
+</script>
+
+</html>
