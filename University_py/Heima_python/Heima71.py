@@ -25,6 +25,14 @@ Heima_main.print_add(7,8)
 #  导入形式                     调用方式
 #  import 模块名                模块名.功能名
 #  import 模块名 as 别名         别名.功能名
-#  form 模块名 import 功能名
-# 
-# 
+#  form 模块名 import 功能名     功能名
+#  from 模块名 功能名 as 别名     别名
+#  from 模块名 import *         功能名
+
+import random
+
+for i in range(100):
+    print(random.randint(1,100))
+
+# 75.自定义模块
+
