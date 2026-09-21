@@ -17,7 +17,86 @@
     console.log(num1/=1);
     console.log(num1%=1);
 
-    //
+    //一元运算符：自增，前置后置
+    num1++;
+    console.log(num1)
+    //比较运算符:<,>,<=,>=,==,!==,===，返回的结果是布尔类型
+    console.log(2 == 2);
+    //有隐式转换，‘2’转为2，只比较值相等
+    console.log('2' == 2)
+    //=== 全等，判断值和类型都一样才行
+    console.log('22'===22);
+    //NaN不等于任何人，包括他自己
+    console.log(NaN == NaN);
+    //字符串比较是比较ASCII
+    console.log('abc' < 'abcd');
+
+    //逻辑运算符：&&，并且；||，或者；！，非；
+    console.log(true && true);
+    console.log(true && false);
+    console.log(true || true);
+    console.log(true || false);
+    console.log(false || false);
+    console.log(!true);
+    console.log(!false);
+    
+    //运算符优先级：
+    //();++,--,!;*,/,%;+,-;>,>=,<,<=;==,!=,===,!==;&&;||;=;,
+
+    // if。。else。。。及嵌套if
+    if(5>3){
+    console.log("对，")
+    }
+    else if(5>4){
+    console.log("dui")
+    }
+    else{
+    console.log("budui")
+    }
+
+    //三目运算符：条件 ？ 满足执行的代码 ： 不满足执行的代码
+    console.log(5>3?5:3)
+    //switch语句：
+    switch(5){
+        case 1:
+            console.log("你选了1")
+            break;
+        case 2:
+            console.log("你选了2")
+            break;
+        default:
+            console.log("没有符合条件的")
+    }
+
+    //while循环
+    let i=0;
+    while(i<=3){
+        document.write("xunhuansanci\t")
+        i++;
+    }
+    // console.log(i);
+   // break:退出整个循环;continue:退出当前循环，继续下一个循环
+   let x =0 ; 
+   while(x<=5){
+        if(x===3){
+            document.write("退出整个循环\n");
+            break;
+        }
+        document.write("打印\n");
+        x++;
+    }
+    
+    let y=0;
+    while(y<=5){
+        if(y===3){
+            y++;//没有这一行会变成死循环
+            document.write("退出当前循环\n");
+            continue;
+        }
+        document.write("打印\n");
+        y++;
+    }
+
 
 
 </script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+</body>
+<script>
+    //for循环
+    for(let i=0;i<=5;i++){
+        if(i===3){
+            document.write("退出本次循环")
+            continue;
+        }
+        document.write("打印");
+    }
+    for(let i=0;i<=5;i++){
+        if(i===3){
+            document.write("退出循环")
+            break;
+        }
+        document.write("打印");
+    }
+    
+    //数组
+    let arr = [1,12,56,23,45,'aaa']
+    console.log(arr);    
+    arr[0] = 'dun';
+    console.log(arr);    
+    arr[1] += 'dvdv';
+    console.log(arr);    
+    //数组.push():将一个或多个元素添加至数组末尾，并返回新数组长度
+    let arr_len = arr.push(45,456,123)
+    console.log(arr,arr_len);
+    //数组.unshift():将一个或多个元素添加到数组开头，并返回该数组的新长度
+    console.log(arr.unshift(45,12));    
+    console.log(arr)
+    //数组.pop():从数组中删除最后一个元素，并返回该元素的值
+    console.log(arr.pop());
+    console.log(arr);    
+    //数组.shift():删除数组的第一个元素，并返回该元素
+    console.log(arr.shift(),arr);
+    //数组.splice(起始位置,删除几个元素):并以数组的形式返回被删除的元素
+    //第二个参数不写则默认删除到最后
+    console.log(arr.splice(1,2),arr);
+    
+</script>
+</html>
