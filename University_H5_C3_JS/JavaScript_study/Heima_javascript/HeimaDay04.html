@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //函数
+    function shert99(){
+        for(let i=1;i<=9;i++){
+            for(let j=1;j<=i;j++){
+                document.write(`<span>${j} X ${i} = ${j*i}</span>`)
+            }
+            document.write('<br>')
+        }
+    }
+    //调用
+    shert99();
+
+    //函数传参(默认值可以为0，这样更严谨)
+    function getSum(stand=0,end=0){
+        let sum =0;
+        for(let i=stand;i<=end;i++){
+            sum+=i;
+        }
+        console.log(sum);
+    }
+    getSum(1,100);
+    //参数默认值
+    function getsum(x =1,y = 2){
+        document.write(x + y);
+    }
+    getsum();
+
+    //数组求和案例
+    function getArrSum(arr = []){
+        let sum=0;
+        for(let i=0;i<arr.length;i++){
+            sum += arr[i];
+        }
+        console.log(sum);
+    }
+    getArrSum([1,2,3,4,5]);
+    getArrSum();
+
+    //函数返回值
+    function fn(){
+        return 20;
+    }
+    let re = fn();
+    console.log(re);
+    //两个相同的函数，后面的会覆盖前面的
+    //实参和形参个数可以不一致
+    //形参过多，会自动填上undefined
+    //实参过多，那么多余的实参会忽略
+
+    //作用域
+    //一段代码中所用到的名字并不总是有效和可用的，而限定这个名字的可用性的代码范围就是这个名字的作用域
+    //全局作用域和局部作用域，比如：整个script标签和整个js文件就是全局作用域，一个函数内的代码就是局部作用域
+    //全局变量和局部变量同上
+
+    //变量的特殊情况
+    //如果函数的内部，变量没有声明直接赋值，也会被当作全局函数看
+    function fun(){
+        dum = 10;//相当于用了var
+    }
+    fun();
+    console.log(dum);
+    //但是函数的的形参（可以不用声明）可以看作局部变量
+    //访问原则：先局部再全局
+
+    //匿名函数
+    //函数表达式:将匿名函数赋值给一个变量，通过变量名进行调用
+    let ab = function(){
+        console.log("我是函数表达式");
+    }
+    ab();
+    console.log(ab);
+    //跟普通函数不同：普通函数可以在任何地方地方调用，函数表达式必须先写表达式再调用
+
+    //立即执行函数（避免全局变量之间的污染）：
+    (function(){
+        let num=1501;
+        console.log(num);
+    })();//如果要连着写这种函数，那么这里必须加；
+    (function(x,y){
+        let num =151;
+        console.log(num);
+        console.log(x+y);
+    })(1,2);
+    //两个小括号的本质：第一个相当于声明函数，第二个相当于调用函数
+
+    //逻辑中断
+    
+
+
+
+
+</script>
+</html>
