@@ -13,11 +13,65 @@
     //对象的创建方式,对象由属性和方法组成，属性是对象的特征，方法是对象的行为
     //let obj = new Object();或者let obj = {};
     let obj = {
-        name:'张三',
+        'user-name':'张三',
         age:18,
         sex:'男'
     }
     console.log(obj,typeof obj);
+
+    //对象的使用：增删改查
+    //查:对象.属性;
+    console.log(obj.sex);
+    //改:对象.属性 = 新属性值
+    obj.sex = '女';
+    console.log(obj.sex);
+    //增:对象.新属性 = 新值
+    obj.hobby = "足球";
+    console.log(obj);
+    //删:delete 对象.属性
+    delete obj.hobby;
+    console.log(obj);
+    //对象['属性'];对象["属性"];(当对象中的属性是name那样定义的时候，只能用这两种方法)因为-会把他们分开
+    console.log(obj.user-name,obj['user-name']);
+
+    //对象的方法
+    let obj1 = {
+        uname:'周杰伦',
+        song:function(x , y){
+            console.log("最长的电影");
+            console.log(x + y);
+        }
+    }
+    obj1.song(1,2);
+
+    //遍历对象
+    for(let k in obj){//有方法的对象用这种遍历的话，会将方法打印出来
+        console.log(k);//会输出属性名，实际相当于k='属性名'
+        console.log(obj[k]);
+    }
+    //for in 方法用来遍历数组的话，k='数组下标'
+
+    //内置对象 Math
+    console.log(Math.PI)
+    //ceil 天花板 向上取整
+    console.log(Math.ceil(.95))
+    console.log(Math.ceil(1.1))
+    //floor 地板 向下取整
+    console.log(Math.floor(1.9))
+    //四舍五入 round(取离他最近的整数)
+    console.log(Math.round(1.4))
+    console.log(Math.round(1.5))
+    console.log(Math.round(-1.5))
+    console.log(Math.round(-1.51))
+    //取整函数 parseInt()
+    console.log(parseInt(1.9))
+    console.log(parseInt('12px'))
+    console.log(parseInt('152'))
+    //最小最大值，绝对值
+    console.log(Math.max(1,2,3,4,5))
+    console.log(Math.min(1,2,3,4,5))
+    console.log(Math.abs(-1))
+    
 
 
 
