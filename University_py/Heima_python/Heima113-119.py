@@ -6,9 +6,20 @@
 # 109.会话管理-思路分析
 
 # 113.会话管理
+# 114.新建会话
+# 115.展示会话
+# 116.加载会话
+# 117.删除会话
+# 118.功能优化与小结
+# 119.文件操作知识扩展
+import datetime
 import os
 from openai import OpenAI
 import streamlit as st
+import json
+
+SESSIONS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sessions")
+
 # 设置页面布局
 st.set_page_config(
     page_title="AI智能伴侣",
@@ -21,6 +32,27 @@ st.set_page_config(
         
     }
 )
+
+# 生成会话标识函数
+def generate_session_name():
+    st.session_state.current_session = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
+# 保存会话信息函数
+def save_session():
+    if st.session_state.current_session:
+                # 新建一个会话对象，存储
+                session_date = {
+                    "nick_name":st.session_state.nick_name,
+                    "nature":st.session_state.nature,
+                    "current_session":st.session_state.current_session,
+                    "messages":st.session_state.messages
+                }
+                os.makedirs(SESSIONS_DIR, exist_ok=True)
+                # 保存会话数据
+                session_path = os.path.join(SESSIONS_DIR, f"{st.session_state.current_session}.json")
+                with open(session_path, "w", encoding="utf-8") as f:
+                    json.dump(session_date,f,ensure_ascii=False,indent=4)
+
 
 # 大标题
 st.title("AI智能伴侣")
@@ -53,6 +85,11 @@ if "nick_name" not in st.session_state:
 if "nature" not in st.session_state:
     st.session_state.nature = ["傲娇，可爱"]
 
+#会话标识
+if "current_session" not in st.session_state:
+    # 获取当前系统时间，然后格式化输出:年-月-日_时-分-秒
+    generate_session_name()
+
 # 展示聊天信息
 for message in st.session_state.messages:   #{“role”:”user”,”content”:”你好”}
     st.chat_message(message["role"]).write(message["content"])
@@ -66,6 +103,23 @@ client = OpenAI(api_key=os.environ.get('DEEPSEEK_API_KEY'),base_url="https://api
 
 # 左侧侧边栏
 with st.sidebar:
+    # AI控制面板
+    st.subheader("AI控制面板")
+
+    # 新建会话
+    if st.button("新建会话",width="stretch"):
+        # 1.保存当前会话信息
+        save_session()
+
+        # 2.创建新的会话
+        st.session_state.messages = []
+        generate_session_name()
+        save_session()
+
+
+
+
+
     st.subheader("伴侣信息")
     # 昵称输入框
     nick_name = st.text_input("昵称",placeholder="请输入昵称",value=st.session_state.nick_name[0] if st.session_state.nick_name else "")
@@ -116,6 +170,5 @@ if prompt: #字符串会自动转换为布尔值，非空字符串为True，空�
             response_message.chat_message("assistant").write(full_response)
     # 保存用户输入的内容到会话状态中
     st.session_state.messages.append({"role": "assistant", "content": full_response})
-
 
 
