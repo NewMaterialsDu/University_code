@@ -66,5 +66,25 @@ class HuaweiAiDriving:
 class WenjieCar(Car,HuaweiAiDriving):
     pass
 
-# 当一个类继承了多个父类时
-c2 = WenjieCar("")
+# 当一个类继承了多个父类时，默认使用第一个父类中的属性和方法，可以使用类名.__mro__属性或类名.mro()方法查看调用顺序
+c2 = WenjieCar('BMW','X5','黑色','zs')
+print(WenjieCar.__mro__)
+print(WenjieCar.mro())
+
+# 164.多态：同一个方法具备不同的行为表现
+def handle_charge(car:Car):
+    car.charge()
+# 这里虽然是指定父类Car为参数，但是传入子类也可以
+handle_charge(Car('Audi','A6','黑色','我的'))
+handle_charge(FuelCar01('BMW','X5','黑色','zs'))
+
+# 165.python中的多态不依赖于继承体系，即使对象中没有相互继承，只要存在相同的方法，传入的参数不是指定参数，也能调用相关的方法
+
+
+
+
+
+
+
+
+
