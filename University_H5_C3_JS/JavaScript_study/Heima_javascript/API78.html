@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+</body>
+<script>
+    //78.APIs阶段课程安排
+
+    //79.不能变的数据优先使用const
+    //基本数据类型变化的变量不能使用const，但是复杂数据类型的可以使用const
+    //因为复杂数据类型存在栈里，地址存在堆里，然后变量指向堆里的地址，堆里的地址指向栈里的数据
+    //所以栈里的数据改变并不会导致地址改变，所以会变化的复杂数据类型可以用const修饰，列如：
+    const obj1 = ["ok","nh"];
+    console.log(obj1);
+    obj1.push("时间");
+    console.log(obj1);
+
+    //80.DOM树和DOM对象
+    //DOM树：将HTML文档以树状结构直观的表现出来
+    //DOM对象：将HTML的标签通过js拿过来，就是对象（把网页里面的内容当作对象来处理）
+    //document对象，是一整个网页的对象（网页所有的内容都在document里）
+    
+    //80.
+
+</script>
+</html>
