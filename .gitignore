@@ -120,6 +120,13 @@ build/
 .ipynb_checkpoints/
 *.asv
 
+# uv：在无 pyproject.toml 的目录直接 `uv run` 时，会自动生成一套
+# 空壳工程（pyproject.toml + uv.lock + .venv），属于运行时垃圾，不提交。
+# 若将来某个子项目确实需要提交自己的 pyproject.toml，用 `git add -f <路径>` 放行。
+pyproject.toml
+uv.lock
+.uv/
+
 # ------------------------------------------------------------
 # Node.js
 # ------------------------------------------------------------
