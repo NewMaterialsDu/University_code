@@ -6,8 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    
-
+    <div class = 'box'></div>
+    <p id="nav">你好</p>
+    <ul>
+        <li>ceshi1</li>
+        <li>cesj</li>
+        <li>ceshi3</li>
+    </ul>
 </body>
 <script>
     //78.APIs阶段课程安排
@@ -26,7 +31,28 @@
     //DOM对象：将HTML的标签通过js拿过来，就是对象（把网页里面的内容当作对象来处理）
     //document对象，是一整个网页的对象（网页所有的内容都在document里）
     
-    //80.
+    //80.获取dom对象
+    // 通过css选择器获取第一个匹配到的元素（返回的是对象，没匹配到返回null）
+    console.log(document.querySelector("div"))
+    console.log(document.querySelector(".box"))
+    console.log(document.querySelector("#nav"))
+    console.log(document.querySelector("ul li"))
+    // 获取多个，返回集合对象（伪数组，有下标跟索引，但是没有数组的方法（pop，push））
+    console.log(document.querySelectorAll("ul li"))
+    //获取一个的时候可以直接修改对象，多个的时候不行，需要遍历
+
+    // 其他获取元素的方式（了解）（第一个返回一个元素，后两个返回的都是伪数组）
+    //根据id获取第一个元素
+    console.log(document.getElementById("nav"))
+    //根据标签获取一类元素，获取页面的所有li
+    console.log(document.getElementsByTagName("li"))
+    //根据类名获取一类元素，获取页面所有类名为box
+    console.log(document.getElementsByClassName("box"))
+
+    //81.
+
+
+
 
 </script>
 </html>
