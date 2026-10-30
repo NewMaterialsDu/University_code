@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<!-- <body>
+
+    <div id="divId">
+        <span id="spanId" class="span spanspan">
+            //我是注释
+            <p id="pId">我是p标签</p>
+        </span>
+        <span class="span"></span>
+        <img src="" alt="" id="imgId">
+        
+        <button>点击我改变p标签颜色</button>
+    </div> -->
+    
+    <!-- //------------------------------------ -->
+    
+    <!-- <div class="div1">
+        div1
+        <div class="div2">div2</div>
+        <div class="div3">div3</div>
+    </div> -->
+
+    <!-- //------------------------------------ -->
+    <div>
+        <input type="password" id="pawId">
+        <button id="btnId"><img src="./闭眼睛.png" id="imgId"></button>
+    </div>
+</body>
+<script>
+
+    // // 获取id为divId的标签
+    // const div1 = document.getElementById('divId')
+    // console.log(div1)
+
+    // // 获取名字为div的标签（返回的是一个动态集合，类似数组），并打印第一个
+    // const div2 = document.getElementsByTagName('div')
+    // console.log(div2[0])
+
+    // // 获取class为span的标签
+    // const spans = document.getElementsByClassName('span')
+    // console.log(spans)
+
+    // // 获取class为span的标签（这里的class是在css里获取，所以加上.），并返回第一个
+    // const span1 = document.querySelector('.span')
+    // console.log(span1)
+
+    // // 获取class为span的标签（返回的是一个静态集合，类似数组）
+    // const span2 = document.querySelectorAll('.span')
+    // console.log(span2)
+
+    // //事件源，来自btn
+    // const btn = document.querySelector('button')
+    // const p = document.querySelector('p')
+    // // 事件类型：onclick点击事件，事件处理程序
+    // btn.onclick = function(){
+    //     if(p.style.color == 'red'){
+    //         p.style.color = 'black'
+    //     }else{
+    //     p.style.color = 'red'
+    //     }
+    // }
+
+    // const divs = document.querySelectorAll('div')
+    // console.log(divs[0].innerHTML)
+    // console.log(divs[0].innerText)
+    // //修改会覆盖原来的内容，text是纯文本，html会解析成为一个真正的标签
+    // divs[0].innerText = '我是新的innerText'
+    // divs[1].innerHTML = ' <a href="baidu.com">点击我</a> '
+
+    const paw = document.getElementById('pawId')
+    const btn = document.getElementById('btnId')
+    const imgid = document.getElementById('imgId')
+    btn.onclick = function(){
+        if(paw.type == 'password'){
+            paw.type = 'text'
+            imgid.src = './睁眼.png'
+        }else{
+            paw.type = 'password'
+            imgid.src = './闭眼睛.png'
+        }
+    }
+</script>
+</html>
