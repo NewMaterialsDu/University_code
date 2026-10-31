@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .class1 {
+        color: blue;
+        border-radius: 24px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .class2 {
+        font-size: 28px;
+    }
+
+    .class3 {
+        background-color: blueviolet;
+    }
+</style>
+
+<body>
+    <div class="class1 class2">111</div>
+    <div class="div0">
+        <div class="div1">
+            <span></span>
+        </div>
+        <div class="div2">
+            <img src="" alt="">
+            <button></button>
+        </div>
+    </div>
+
+    <div class="div88">
+        <input class="input" type="text">
+        <button class="btn">点击添加待办项</button>
+        <ul class="ul01"></ul>
+    </div>
+
+</body>
+<script>
+    const div = document.querySelector('div')
+    //读出类名，然后在原来的基础上拼接一个新的classname（class3）
+    const oldDivClassName = div.className
+    //模板字符串写法：类似py的格式化字符串写法，但是只能用反引号界定
+    // div.className = `${oldDivClassName} class3`
+    // div.className = oldDivClassName + 'class3'
+
+    //可以使用classlist(底层实现是先自己解析成字符串，然后再使用自己提供的方法)
+    div.classList.add('class4', 'class3')
+    div.classList.remove('class4')
+
+    //操作元素的三种方法：
+    div.style.backgroundColor = 'red'
+
+    //节点操作：
+    //创建一个a标签，放进div0里
+    const a = document.createElement('a')
+    const div0 = document.querySelector('.div0')
+    div0.appendChild(a)
+    //想在div1里把span插到a前面（但是a不是div1的子元素，是跟div1平级，所以会报错）
+    const div1 = document.querySelector('div1')
+    const span = document.querySelector('span')
+    // div1.insertBefore(span,a)
+
+    //写一个待办项，点击添加就多一个待办项，同时清除输入框
+    const btn = document.querySelector('.btn')
+    btn.onclick = function () {
+        const input = document.querySelector('.input')
+        if (input.value) {
+            const div88 = document.querySelector('.div88')
+            const ul01 = document.querySelector('.ul01')
+            const li = document.createElement('li')
+            li.textContent = input.value
+            ul01.appendChild(li)
+            input.value = ''
+        }
+
+    }
+
+</script>
+
+</html>
