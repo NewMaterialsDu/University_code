@@ -31,7 +31,7 @@
     //DOM对象：将HTML的标签通过js拿过来，就是对象（把网页里面的内容当作对象来处理）
     //document对象，是一整个网页的对象（网页所有的内容都在document里）
     
-    //80.获取dom对象
+    //81.获取dom对象
     // 通过css选择器获取第一个匹配到的元素（返回的是对象，没匹配到返回null）
     console.log(document.querySelector("div"))
     console.log(document.querySelector(".box"))
@@ -49,9 +49,16 @@
     //根据类名获取一类元素，获取页面所有类名为box
     console.log(document.getElementsByClassName("box"))
 
-    //81.
-
-
+    //82.dom修改元素内容以及年会抽奖案例
+    // 操作元素对象：对象.innerText属性和对象.innerHTML属性
+    const box = document.querySelector(".box");
+    console.log(box.innerText);//获取文字内容
+    box.innerText = "新的内容";//修改文字内容，显示纯文本，不解析标签
+    box.innerHTML = "<strong>新的HTML内容</strong>";//会解析标签
+    
+    //83.修改元素常见属性及其案例
+    //操作元素常用属性，操作元素样式属性，操作表单元素属性，自定义属性
+    
 
 
 </script>
