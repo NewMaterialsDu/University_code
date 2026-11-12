@@ -73,7 +73,8 @@ print('-'*23)
 for i in my_g2:
     print(i)
 
-# 111.
+# 101.生成器案例
+
 
 
 

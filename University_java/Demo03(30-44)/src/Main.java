@@ -95,12 +95,37 @@ public class Main {
         //反码：为了解决原码不能原码不能计算负数的问题而出现的（计算规则：正数的反码不变，负数的反码在原码的基础上，符号位不变，数值取反，0变1，1变0）
         //补码 = 反码 + 1（为了解决当负数跨越0计算变成正数的时候，用反码计算会出问题11111111加一应该是00000000，所以补码就后退一位，11111111做-1，以此类推）
         //注意：计算机中的存储和计算都是以补码的形式进行的
-        
 
+        //顺序结构：就是代码从上往下执行
+        //if语句：if（关系表达式）{   代码体1；    }else if{     代码体2；    }......else{    代码体n；     }   //关系表达式true就执行
+        //switch语句：有对应的值就执行，没有就default保底，break会退出switch
+        int a43 = 3;
+        switch (a43) {
+            case 1:
+                System.out.println("a43==1");
+                break;
+            case 2:
+                System.out.println("a43==2");
+                break;
+            case 3:
+                System.out.println("a43==3");
+                break;
+            default:
+                System.out.println("a43==不知道");
+                break;
+        }
 
+        //default可以写在任意位置，也可以不写（不过不写的时候没有匹配就不会执行）
+        //break不能省，不然会全部执行的
 
-
-
+        //jdk12以后的新特性，下面这个个数不写break也可以
+        int number44 = 1;
+        switch (number44) {
+            case 1 ->{ System.out.println("number44==1"); }
+            case 2 ->{  System.out.println("number44==2"); }
+            case 3 ->{   System.out.println("number44==3"); }
+            default ->{ System.out.println("没有这种选项"); }
+        }
 
 
 
