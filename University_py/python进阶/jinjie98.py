@@ -11,6 +11,7 @@ class MyIterator:
     def __iter__(self):
         return self
 
+
     def __next__(self):
         # 判断，如果出界则抛出异常结束
         if self.current_value >= self.end:
@@ -36,7 +37,6 @@ print(next(my_generator))
 print('-'*23)
 for i in my_generator:
     print(i)
-
 print('-'*23)
 
 # 验证生成器可以节省内存
@@ -74,6 +74,14 @@ for i in my_g2:
     print(i)
 
 # 101.生成器案例
+
+# 102.上午总结
+
+# 103.property属性介绍
+# 就是把函数当属性用，两种使用方法，装饰器方式跟类属性方式
+# 装饰器用法:
+print('-'*23)
+
 
 
 
