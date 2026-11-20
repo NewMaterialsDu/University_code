@@ -60,7 +60,14 @@ public class Main {
         //方法：是程序中最小的执行单元
 
         //方法的定义和调用
-        
+        System.out.println(getsum(10,20));
+        //方法和方法之间是平级的，不能嵌套使用
+        //void代表没有返回值，不用写return，如果非要写，后面不能加具体的数据
+
+        //方法的重载：同一个类中，同名的，同种功能，但是参数类型或个数不同或顺序不同（与返回值不同）
+        compare(10,30);
+
+
 
 
 
@@ -72,5 +79,30 @@ public class Main {
 
 
     }
+
+    public static int getsum(int num1,int num2){
+        int result = num1 + num2;
+        System.out.println(result);
+        return result;
+    }
+
+    //方法重载
+    public static void compare(byte num1,byte num2){
+        System.out.println(num1 == num2);
+    }
+
+    public static void compare(short num1,short num2){
+        System.out.println(num1 == num2);
+    }
+
+    public static void compare(int num1,int num2){
+        System.out.println(num1 == num2);
+    }
+
+    public static void compare(long num1,long num2){
+        System.out.println(num1 == num2);
+    }
+
+
 
 }
